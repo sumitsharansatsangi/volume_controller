@@ -92,6 +92,14 @@ class _MyAppState extends State<MyApp> {
                 )
               ],
             ),
+            VolumeSlider(
+              display: Display.HORIZONTAL,
+              sliderActiveColor: Theme.of(context).primaryColor,
+              muteIconColor: Theme.of(context).colorScheme.surface,
+              upVolumeIconColor: Theme.of(context).colorScheme.surface,
+              visibleWidget: true,
+              sliderInActiveColor: Theme.of(context).dividerColor,
+            )
           ],
         ),
       ),
