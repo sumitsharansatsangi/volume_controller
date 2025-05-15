@@ -51,3 +51,41 @@
 ## 2.0.8
 
 * iOS: Update removeObserver may crash issue
+
+## 3.0.0
+
+* Change the singleton to instance
+* Rename listener to addListener
+* iOS: Improve the performance of volume change listener
+
+## 3.0.1
+
+* iOS: Fix music stops when opening the app.
+
+## 3.0.2
+
+* Remove method `maxVolume` and `muteVolume`
+
+## 3.1.0
+
+* Support MacOS
+
+## 3.2.0
+
+* Add `isMuted` and `setMute` functions
+
+## 3.3.0
+
+* Support Windows
+
+## 3.3.1
+
+* Update README.md
+
+## 3.3.2
+
+* Fix the audio session cannot be activated after background resume on iOS
+
+## 3.3.3
+
+* Downgrade the android compileSdk version to 34
