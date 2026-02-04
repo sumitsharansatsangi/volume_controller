@@ -9,17 +9,12 @@ extension Comparable {
 
 extension AVAudioSession {
   func getVolume() -> Float {
-    do {
-      try setActive(true)
-      return outputVolume
-    } catch {
-      print("Error activating audio session: \(error)")
-      return 0
-    }
+   return outputVolume
   }
 
   func activateAudioSession() {
     do {
+      try setAudioSessionCategory()
       try setActive(true)
     } catch {
       print("Error activating audio session: \(error)")
@@ -28,7 +23,7 @@ extension AVAudioSession {
 
   func deactivateAudioSession() {
     do {
-      try setActive(false)
+      try setActive(false, options: .notifyOthersOnDeactivation)
     } catch {
       print("Error deactivating audio session: \(error)")
     }
@@ -36,7 +31,7 @@ extension AVAudioSession {
 
   func setAudioSessionCategory() {
     do {
-      try setCategory(.playback, options: .mixWithOthers)
+      try setCategory(.playback, options: [.mixWithOthers])
     } catch {
       print("Error setting audio session category: \(error)")
     }

@@ -43,20 +43,17 @@ public class VolumeListener: NSObject, FlutterStreamHandler {
   }
 
   private func registerVolumeObserver() {
-    do {
-      try audioSession.setAudioSessionCategory()
-      try audioSession.activateAudioSession()
-      if !isObserving {
-        audioSession.addObserver(
-          self,
-          forKeyPath: volumeKey,
-          options: .new,
-          context: nil)
-        isObserving = true
-      }
-    } catch {
-      print("Error setting up volume observer: \(error)")
-    }
+   guard !isObserving else { return }
+
+    audioSession.setAudioSessionCategory()
+    audioSession.activateAudioSession()
+
+    audioSession.addObserver(
+      self,
+      forKeyPath: volumeKey,
+      options: .new,
+      context: nil)
+    isObserving = true
   }
 
   private func removeVolumeObserver() {

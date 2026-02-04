@@ -34,9 +34,9 @@ class _MyAppState extends State<MyApp> {
       setState(() => _volumeValue = volume);
     }, fetchInitialVolume: true);
 
-    _volumeController
-        .isMuted()
-        .then((isMuted) => setState(() => _isMuted = isMuted));
+    _volumeController.isMuted().then(
+      (isMuted) => setState(() => _isMuted = isMuted),
+    );
   }
 
   @override
@@ -49,9 +49,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Volume Plugin example app'),
-        ),
+        appBar: AppBar(title: const Text('Volume Plugin example app')),
         body: Column(
           children: [
             Text('Current volume: $_volumeValue'),
@@ -93,7 +91,7 @@ class _MyAppState extends State<MyApp> {
                           !_volumeController.showSystemUI,
                     ),
                     child: Text('Show/Hide UI'),
-                  )
+                  ),
                 ],
               ),
             Row(
