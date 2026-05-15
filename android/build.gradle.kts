@@ -17,10 +17,6 @@ android {
     namespace = "com.kurenai7968.volume_controller"
 
     compileSdk = 37
-
-    kotlinOptions {
-        jvmTarget = '21'
-    }
      
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
@@ -31,3 +27,9 @@ android {
         targetSdk = 37
     }
 }
+
+kotlin {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_21)
+        }
+    }
