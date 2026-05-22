@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 group = "com.kurenai7968.volume_controller"
 version = "1.0-SNAPSHOT"
@@ -10,7 +9,6 @@ repositories {
 
 plugins {
     id("com.android.library")
-    kotlin("android")
 }
 
 android {
@@ -27,8 +25,3 @@ android {
     }
 }
 
-kotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_21)
-        }
-    }
